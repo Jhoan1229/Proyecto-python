@@ -7,19 +7,26 @@ Proyecto Python y Mysql:
 - Crear nota, mostrar notas, borrarlas.
 """
 
-from usuarios import acciones
+import acciones
 
-print("""
-Acciones disponibles:
-    - registro
-    - login      
-""")
+def getAction():
+    return input("\n¿Qué quieres hacer?\n 1. Registro \n 2. Login \n >")
 
 hazEL = acciones.Acciones()
-accion = input("Que quieres hacer?: ")
+accion = getAction()
 
-if accion == "registro":
+try:
+    accion = int(accion)
+except:
+    print("Debes introducir un número")
+    accion = getAction()
+
+if accion not in [1,2]:
+    print("Introduce un número correcto")
+    accion = getAction()
+
+if accion == 1:
     hazEL.registro()
     
-elif accion == "login":
+elif accion == 2:
     hazEL.login()
