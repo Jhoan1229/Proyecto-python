@@ -7,7 +7,7 @@ Proyecto Python y Mysql:
 - Crear nota, mostrar notas, borrarlas.
 """
 
-from usuarios import acciones
+import acciones
 
 print("""
 Acciones disponibles:

@@ -1,4 +1,4 @@
-from usuarios import acciones
+import acciones
 import mysql.connector
 import datetime
 
